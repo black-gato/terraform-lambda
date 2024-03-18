@@ -1,0 +1,14 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - GOARCH=amd64 GOOS=linux go build -o bootstrap main.go && zip hello.zip bootstrap 
+  
+  destroy:
+    cmds:
+    - terraform destroy
+
+  apply:
+    cmds:
+    - terraform apply
